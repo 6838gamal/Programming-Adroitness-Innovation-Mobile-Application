@@ -27,9 +27,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-    assets:
-     - assets/images/logo.png
-  #  - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/images/logo.png
+
+  # لإضافة خطوط مخصصة لاحقًا، أزل التعليق عن الكتل التالية وعدّلها حسب الحاجة:
   # fonts:
   #   - family: Schyler
   #     fonts:
