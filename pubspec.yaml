@@ -18,6 +18,7 @@ dependencies:
   flutter_chat_types: ^3.4.0
   intl: ^0.18.0
   url_launcher: ^6.1.7
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:

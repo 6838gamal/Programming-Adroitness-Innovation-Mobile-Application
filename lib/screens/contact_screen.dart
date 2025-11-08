@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/app_drawer.dart';
 
@@ -11,14 +12,18 @@ class ContactScreen extends StatelessWidget {
   Future<void> _openWhatsApp(BuildContext context) async {
     final Uri uri = Uri.parse('https://wa.me/$whatsappNumber');
     if (!await launchUrl(uri)) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('تعذر فتح واتساب')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('تعذر فتح واتساب')),
+      );
     }
   }
 
   Future<void> _openTelegram(BuildContext context) async {
     final Uri uri = Uri.parse(telegramUrl);
     if (!await launchUrl(uri)) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('تعذر فتح تليجرام')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('تعذر فتح تليجرام')),
+      );
     }
   }
 
@@ -31,16 +36,17 @@ class ContactScreen extends StatelessWidget {
         padding: const EdgeInsets.all(18.0),
         child: Column(
           children: [
-            const Text('طرق التواصل', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            const Text('طرق التواصل',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             const SizedBox(height: 12),
             ListTile(
-              leading: const Icon(Icons.whatsapp, color: Colors.green),
+              leading: const Icon(FontAwesomeIcons.whatsapp, color: Colors.green),
               title: const Text('واتساب'),
               subtitle: Text('+${whatsappNumber}'),
               onTap: () => _openWhatsApp(context),
             ),
             ListTile(
-              leading: const Icon(Icons.telegram, color: Colors.blue),
+              leading: const Icon(FontAwesomeIcons.telegram, color: Colors.blue),
               title: const Text('قناة التليجرام'),
               subtitle: const Text('DigitalSpaceStore'),
               onTap: () => _openTelegram(context),
